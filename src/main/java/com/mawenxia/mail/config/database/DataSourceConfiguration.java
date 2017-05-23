@@ -30,7 +30,7 @@ public class DataSourceConfiguration {
 	
  
 	@Bean(name = "masterDataSource")
-	@Primary
+	@Primary //优先选择此datasource
 	@ConfigurationProperties(prefix = "druid.master") 
 	public DataSource masterDataSource() throws SQLException{
 		DataSource masterDataSource = DataSourceBuilder.create().type(dataSourceType).build();

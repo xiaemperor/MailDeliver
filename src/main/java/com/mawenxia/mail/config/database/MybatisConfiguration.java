@@ -13,6 +13,11 @@ import javax.annotation.Resource;
 import javax.sql.DataSource;
 
 /**
+ * 配置类
+ *
+ * 加入到mybatis配置中，必须要继承MybatisAutoConfiguration
+ * 等于在mybatis的xml文件中加入配置
+ *
  * Created by sam on 2017/5/22.
  */
 @Configuration
