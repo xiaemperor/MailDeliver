@@ -22,6 +22,7 @@ public class ReadOnlyConnectionInterceptor implements Ordered{
     public Object proceed(ProceedingJoinPoint proceedingJoinPoint,ReadOnlyConnection readOnlyConnection) throws Throwable{
         try{
             LOGGER.info("---------set database connection 2 readonly-----");
+            System.err.println("setting slave");
             DataBaseContextHolder.setDataBaseType(DataBaseContextHolder.DataBaseType.SLAVE);
             Object result = proceedingJoinPoint.proceed();
             return result;

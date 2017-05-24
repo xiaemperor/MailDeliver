@@ -21,7 +21,7 @@ import javax.sql.DataSource;
  * Created by sam on 2017/5/22.
  */
 @Configuration
-@AutoConfigureAfter({DataSourceConfiguration.class})
+@AutoConfigureAfter({DataSourceConfiguration.class}) //AutoConfigureAfter注解表示加载完datasource后再加载此配置
 public class MybatisConfiguration extends MybatisAutoConfiguration {
     @Resource(name="masterDataSource")
     private DataSource masterDataSource;
@@ -34,6 +34,9 @@ public class MybatisConfiguration extends MybatisAutoConfiguration {
     }
 
     public AbstractRoutingDataSource roundRobinDataSourceProxy(){
+        /**
+         * 往代理中加入所有数据源
+         */
         ReadWriteSplitRoutingDataSource proxy = new ReadWriteSplitRoutingDataSource();
         SoftHashMap targetDataSource = new ClassLoaderRepository.SoftHashMap();
         targetDataSource.put(DataBaseContextHolder.DataBaseType.MASTER,masterDataSource);
