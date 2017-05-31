@@ -2,12 +2,14 @@ package com.mawenxia.mail;
 
 import com.github.pagehelper.PageHelper;
 import com.mawenxia.mail.entity.MstDict;
-import com.mawenxia.mail.entity.User;
 import com.mawenxia.mail.mapper.MstDictMapper;
 import com.mawenxia.mail.service.MstDictService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
@@ -28,7 +30,7 @@ public class MailProducerApplicationTests {
 	@Resource
 	private MstDictService mstDictService;
 
-	@Test
+	@Test //分页测试
 	public void test1() throws Exception{
 		PageHelper.startPage(1,2);
 		List<MstDict> list = mstDictMapper.selectAll();
@@ -43,5 +45,16 @@ public class MailProducerApplicationTests {
 		list.forEach((mstDict)->{
 			System.err.println(mstDict.getName());
 		});
+	}
+
+	@Autowired
+	private RedisTemplate<String,String> redisTemplate;
+
+	@Test
+	public void test3() throws Exception{
+		ValueOperations<String,String> opsForValue = redisTemplate.opsForValue();
+//		opsForValue.set("age","26");
+		System.err.println(opsForValue.get("age"));
+		redisTemplate.delete("age");
 	}
 }

@@ -28,7 +28,7 @@
 		<fastjson.version>1.1.26</fastjson.version>
 		<mybatis.version>3.4.1</mybatis.version>
 		<mybatis-spring.version>1.3.0</mybatis-spring.version>
-		<druid.version>1.0.24</druid.version>
+		<druid.version>1.0.31</druid.version>
 		<fasterxml.uuid.version>3.1.4</fasterxml.uuid.version>
 		<github.miemiedev.version>1.2.17</github.miemiedev.version>
 		<common.codec.version>1.10</common.codec.version>
@@ -143,6 +143,7 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
+
 		<!--pagehelper-->
 		<dependency>
 			<groupId>com.github.pagehelper</groupId>
@@ -163,13 +164,12 @@
 		</dependency>
 
 		<!-- spring redis -->
-		<!--
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-redis</artifactId>
 			<version>1.4.3.RELEASE</version>
 		</dependency>
--->
 
 
 		<dependency>

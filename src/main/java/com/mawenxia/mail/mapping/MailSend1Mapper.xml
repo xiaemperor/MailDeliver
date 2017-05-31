@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mawenxia.mail.mapper.MailSend1Mapper" >
+  <resultMap id="BaseResultMap" type="com.mawenxia.mail.entity.MailSend" >
+    <id column="SEND_ID" property="sendId" jdbcType="VARCHAR" />
+    <result column="SEND_USER_ID" property="sendUserId" jdbcType="VARCHAR" />
+    <result column="SEND_TO" property="sendTo" jdbcType="VARCHAR" />
+    <result column="SEND_MAIL" property="sendMail" jdbcType="VARCHAR" />
+    <result column="SEND_CONTENT" property="sendContent" jdbcType="VARCHAR" />
+    <result column="SEND_PRIORITY" property="sendPriority" jdbcType="DECIMAL" />
+    <result column="SEND_COUNT" property="sendCount" jdbcType="DECIMAL" />
+    <result column="SEND_STATUS" property="sendStatus" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="VERSION" property="version" jdbcType="DECIMAL" />
+    <result column="UPDATE_BY" property="updateBy" jdbcType="VARCHAR" />
+    <result column="UPDATE_TIME" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    SEND_ID, SEND_USER_ID, SEND_TO, SEND_MAIL, SEND_CONTENT, SEND_PRIORITY, SEND_COUNT, 
+    SEND_STATUS, REMARK, VERSION, UPDATE_BY, UPDATE_TIME
+  </sql>
+</mapper>
