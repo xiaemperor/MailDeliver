@@ -39,7 +39,7 @@ public class MailProducerApplicationTests {
 		});
 	}
 
-	@Test
+	@Test //readOnly测试
 	public void test2() throws Exception{
 		List<MstDict> list = mstDictService.findByStatus("1");
 		list.forEach((mstDict)->{
