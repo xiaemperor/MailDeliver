@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mawenxia.mail.mapper.MstDictMapper" >
+  <resultMap id="BaseResultMap" type="com.mawenxia.mail.entity.MstDict" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="CODE" property="code" jdbcType="VARCHAR" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="STATUS" property="status" jdbcType="VARCHAR" />
+  </resultMap>
+  <!--由于mapper中继承了父类tk的方法,mapping中也不需要写sql了 -->
+  <sql id="Base_Column_List" >
+    ID, CODE, NAME, STATUS
+  </sql>
+  <select id="findByStatus" resultMap="BaseResultMap">
+    SELECT <include refid="Base_Column_List"/> FROM MST_DICT WHERE STATUS = #{status}
+  </select>
+</mapper>

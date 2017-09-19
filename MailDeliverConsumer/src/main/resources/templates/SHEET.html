@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>订单信息</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="Content-Language" content="zh-CN"/>
+<meta name="author" content="天猫商城"/>
+<style class="fox_global_style">
+    div.fox_html_content { line-height: 1.5; }
+    div.fox_html_content { font-size: 10.5pt; font-family: 微软雅黑; color: rgb(0, 0, 0); line-height: 1.5; }
+    div.fp {margin-left:20pt;}
+    div.sp {margin-left:20pt;}
+</style>   
+</head>
+<body>
+<div th:utext="${userName}">用户</div>
+<div class="fp">您好</div>
+<div><br /></div>
+<div class="fp">您于<span th:utext="${createDate}"></span>提交的订单已经生成。</div>
+<div class="fp">如需进行查看详细：<a href="${exportUrl}">点击此处下载</a>订单。</div>
+<div><br /></div>
+
+<div>
+    <div class="fp">致</div>
+    <div class="MsoNormal" >礼！</div>
+</div>
+</body>
+</html>
