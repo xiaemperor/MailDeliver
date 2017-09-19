@@ -1,5 +1,6 @@
 package com.mawenxia.mail;
 
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.mawenxia.mail.entity.MstDict;
 import com.mawenxia.mail.mapper.MstDictMapper;
@@ -32,7 +33,7 @@ public class MailProducerApplicationTests {
 
 	@Test //分页测试
 	public void test1() throws Exception{
-		PageHelper.startPage(1,2);
+		Page page = PageHelper.startPage(1,2);
 		List<MstDict> list = mstDictMapper.selectAll();
 		list.forEach((mstDict)->{
 			System.err.println(mstDict.getName());
